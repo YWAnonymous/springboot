@@ -18,6 +18,7 @@ import java.util.Date;
 public class User implements Serializable {
 
     private String id;
+    private String password;
     private String name;
     private String age;
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GTM+8")
