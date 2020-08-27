@@ -88,7 +88,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\Admin\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -105,12 +105,15 @@
       <workItem from="1598247309273" duration="35000" />
       <workItem from="1598321425285" duration="999000" />
       <workItem from="1598335109749" duration="1528000" />
-      <workItem from="1598491659204" duration="1043000" />
+      <workItem from="1598491659204" duration="1630000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="39" key="#Inspections" timestamp="1597643719297">
@@ -125,14 +128,18 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="446" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1280.760@0.0.1280.760" timestamp="1597650475424" />
+    <state x="247" y="0" key="CommitChangelistDialog2" timestamp="1598493335101">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="247" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1598493335101" />
     <state x="93" y="93" width="1093" height="573" key="DiffContextDialog" timestamp="1598492740749">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="93" y="93" width="1093" height="573" key="DiffContextDialog/0.0.1280.760@0.0.1280.760" timestamp="1598492740749" />
-    <state x="421" y="135" key="FileChooserDialogImpl" timestamp="1598332794900">
+    <state x="421" y="135" key="FileChooserDialogImpl" timestamp="1598493281263">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1598332794900" />
+    <state x="421" y="135" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1598493281263" />
     <state width="1238" height="265" key="GridCell.Tab.0.bottom" timestamp="1597907959430">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -185,5 +192,13 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="412" y="83" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.760@0.0.1280.760" timestamp="1597650954378" />
+    <state x="471" y="171" key="svn.repositoryBrowser" timestamp="1598493286436">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="471" y="171" key="svn.repositoryBrowser/0.0.1280.760@0.0.1280.760" timestamp="1598493286436" />
+    <state x="427" y="145" key="svn4idea.import.options" timestamp="1598493284474">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="427" y="145" key="svn4idea.import.options/0.0.1280.760@0.0.1280.760" timestamp="1598493284474" />
   </component>
 </project>
