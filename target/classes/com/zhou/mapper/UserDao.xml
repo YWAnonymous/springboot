@@ -8,4 +8,8 @@
     <insert id="save" parameterType="User">
         insert into user (name,age,bir,address) values(#{name},#{age},#{bir},#{address})
     </insert>
+
+    <select id="findUserByName" parameterType="User" resultType="User">
+        select * from user where name = #{name}
+    </select>
 </mapper>
