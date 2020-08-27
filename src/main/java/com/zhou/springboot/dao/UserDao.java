@@ -12,4 +12,6 @@ public interface UserDao {
     List<User> findAll();
     //保存用户
     void save(User user);
+
+    User findUserByName(User user);
 }
