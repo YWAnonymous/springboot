@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/login")
-    public Map<String, Object> login(User user) {
+    public Map<String, Object> login(@RequestBody User user) {
         Map<String, Object> map = new HashMap();
         try {
             Map<String, String> map2 = new HashMap<>();
@@ -28,10 +28,10 @@ public class UserController {
             map2.put("username", userDB.getName());
             String token = JWTUtils.getToken(map2);
             map.put("token",token);
-            map.put("state","success");
+            map.put("status","200");
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("state","fail");
+            map.put("status","100");
         }
         return map;
     }

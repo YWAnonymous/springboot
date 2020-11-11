@@ -1,6 +1,10 @@
+com\zhou\springboot\vo\GlobalResult.class
 com\zhou\springboot\controller\UserController.class
+com\zhou\springboot\config\InterceptorConfig.class
 com\zhou\springboot\service\impl\UserServiceImpl.class
 com\zhou\springboot\dao\UserDao.class
 com\zhou\springboot\SpringbootApplication.class
 com\zhou\springboot\service\UserService.class
+com\zhou\springboot\utils\JWTUtils.class
 com\zhou\springboot\entity\User.class
+com\zhou\springboot\interceptors\JWTInterceptor.class
