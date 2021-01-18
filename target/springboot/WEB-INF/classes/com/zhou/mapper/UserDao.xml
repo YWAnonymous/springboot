@@ -5,11 +5,8 @@
     <select id="findAll" resultType="User">
         select * from user
     </select>
-    <insert id="save" parameterType="User">
-        insert into user (name,age,bir,address) values(#{name},#{age},#{bir},#{address})
-    </insert>
 
     <select id="findUserByName" parameterType="User" resultType="User">
-        select * from user where name = #{name}
+        select * from user where username = #{username}
     </select>
 </mapper>

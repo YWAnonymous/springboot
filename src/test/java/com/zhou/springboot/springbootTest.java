@@ -14,15 +14,11 @@ import java.util.List;
 @SpringBootTest
 public class springbootTest {
 
-    @Autowired
-    private UserService userService;
+
 
     @Test
     public void test() {
 
-        List<User> list = userService.findAll();
-        for (User user : list) {
-            System.out.println(user);
-        }
+
     }
 }

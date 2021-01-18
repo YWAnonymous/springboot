@@ -16,14 +16,14 @@ import java.util.Map;
 @RestController
 @CrossOrigin
 @Slf4j
-@Api(value="登录")
+@Api()
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    @ApiOperation("登录接口")
+    @ApiOperation("aa")
     public Map<String, Object> login(User user) {
         log.info("username"+user.getUsername());
         Map<String, Object> map = new HashMap();
