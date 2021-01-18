@@ -3,6 +3,7 @@ package com.zhou.springboot.controller;
 import com.zhou.springboot.entity.User;
 import com.zhou.springboot.service.UserService;
 import com.zhou.springboot.utils.JWTUtils;
+import com.zhou.springboot.vo.GlobalResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +25,9 @@ public class UserController {
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ApiOperation("aa")
-    public Map<String, Object> login(User user) {
-        log.info("username"+user.getUsername());
+    public GlobalResult login(User user) {
+        log.info("username:========>"+user.getUsername());
+        GlobalResult globalResult = null;
         Map<String, Object> map = new HashMap();
         try {
             Map<String, String> map2 = new HashMap<>();
@@ -33,13 +35,15 @@ public class UserController {
             map2.put("id", userDB.getId());
             map2.put("username", userDB.getUsername());
             String token = JWTUtils.getToken(map2);
-            map.put("token",token);
-            map.put("status","200");
+
+
+            globalResult = new GlobalResult(200,"交易成功");
+            globalResult.setData(token);
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("status","100");
+            globalResult = new GlobalResult(100,"交易失败");
         }
-        return map;
+        return globalResult;
     }
 
     @GetMapping("/findAll")

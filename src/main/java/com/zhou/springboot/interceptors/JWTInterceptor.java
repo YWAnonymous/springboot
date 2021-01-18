@@ -21,7 +21,10 @@ public class JWTInterceptor implements HandlerInterceptor {
         String url = request.getServletPath().toString();
 
         System.out.println("URL:>>>>>>>>>>>>>>>>" + url);
-
+        //login
+        if (url.contains("/login")) {
+            return true;
+        }
         // swagger
         if (url.contains("/swagger-ui.html")) {
             return true;
