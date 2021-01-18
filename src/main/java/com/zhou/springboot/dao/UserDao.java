@@ -7,11 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
+@Repository
 public interface UserDao {
     //查询所有用户
     List<User> findAll();
-    //保存用户
-    void save(User user);
 
     User findUserByName(User user);
 }

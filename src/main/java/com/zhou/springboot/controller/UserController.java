@@ -3,6 +3,9 @@ package com.zhou.springboot.controller;
 import com.zhou.springboot.entity.User;
 import com.zhou.springboot.service.UserService;
 import com.zhou.springboot.utils.JWTUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,21 +14,24 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/user")
 @CrossOrigin
+@Slf4j
+@Api(value="登录")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody User user) {
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @ApiOperation("登录接口")
+    public Map<String, Object> login(User user) {
+        log.info("username"+user.getUsername());
         Map<String, Object> map = new HashMap();
         try {
             Map<String, String> map2 = new HashMap<>();
             User userDB = userService.login(user);
             map2.put("id", userDB.getId());
-            map2.put("username", userDB.getName());
+            map2.put("username", userDB.getUsername());
             String token = JWTUtils.getToken(map2);
             map.put("token",token);
             map.put("status","200");
@@ -33,15 +39,6 @@ public class UserController {
             e.printStackTrace();
             map.put("status","100");
         }
-        return map;
-    }
-
-    @PostMapping("/save")
-    public Map<String, Object> saveUser(@RequestBody User user) {
-        Map map = new HashMap();
-        System.out.println("user:" + user);
-        userService.save(user);
-        map.put("status", "success");
         return map;
     }
 

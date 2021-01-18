@@ -16,6 +16,21 @@ public class JWTInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        // 请求URL
+        String url = request.getServletPath().toString();
+
+        System.out.println("URL:>>>>>>>>>>>>>>>>" + url);
+
+        // swagger
+        if (url.contains("/swagger-ui.html")) {
+            return true;
+        }
+        // swagger
+        if (url.contains("/v2/api-docs")) {
+            return true;
+        }
+
         String token = request.getHeader("token");
         Map<String,Object> map = new HashMap<>();
         try {
