@@ -23,12 +23,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ApiOperation("aa")
-    public GlobalResult login(User user) {
-        log.info("username:========>"+user.getUsername());
-        GlobalResult globalResult = null;
-        Map<String, Object> map = new HashMap();
+    public GlobalResult login(@RequestBody User user) {
+        log.info("username:========>" + user.getUsername());
+
         try {
             Map<String, String> map2 = new HashMap<>();
             User userDB = userService.login(user);
@@ -36,14 +35,12 @@ public class UserController {
             map2.put("username", userDB.getUsername());
             String token = JWTUtils.getToken(map2);
 
+            return GlobalResult.ok().data("token", token);
 
-            globalResult = new GlobalResult(200,"交易成功");
-            globalResult.setData(token);
         } catch (Exception e) {
             e.printStackTrace();
-            globalResult = new GlobalResult(100,"交易失败");
+            return GlobalResult.error();
         }
-        return globalResult;
     }
 
     @GetMapping("/findAll")
