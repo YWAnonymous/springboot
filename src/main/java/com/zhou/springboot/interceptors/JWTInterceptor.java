@@ -34,7 +34,13 @@ public class JWTInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        String token = request.getHeader("token");
+        //option预检查，直接通过请求
+        if ("OPTIONS".equals(request.getMethod())){
+            return true;
+        }
+
+        String token = request.getHeader("Authorization");
+        System.out.println("token=============>"+token);
         Map<String,Object> map = new HashMap<>();
         try {
             JWTUtils.verify(token);
